@@ -68,3 +68,6 @@ function onListening() {
 
 - Versión v.2.0.2  
     - Borrar carpeta node_modules del remoto    
+
+- Versión v.2.1.0  
+    - Añadimos funcionalidad de clustering    
