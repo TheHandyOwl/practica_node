@@ -62,3 +62,6 @@ function onListening() {
 - Versión v.2.0.0  
     - Aplicación generada  
     - Servidor configurado y funcionando  
+  
+- Versión v.2.0.1 
+    - Quitando la barra / de los directorios configurados en .gitignore    
