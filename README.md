@@ -63,5 +63,8 @@ function onListening() {
     - Aplicación generada  
     - Servidor configurado y funcionando  
   
-- Versión v.2.0.1 
-    - Quitando la barra / de los directorios configurados en .gitignore    
+- Versión v.2.0.1  
+    - Quitando la barra / de los directorios configurados en .gitignore  
+
+- Versión v.2.0.2  
+    - Borrar carpeta node_modules del remoto    
