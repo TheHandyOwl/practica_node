@@ -19,6 +19,7 @@ Desarrollar el software que se ejecutará en el servidor dando servicio a una a
 ## Instalación  
 
 ### Dependencias necesarias  
+
 Las dependencias locales pueden consultarse en el archivo package.json.  
 Para instalarlas desde el directorio raíz de la aplicación, ejecutando el siguiente comando:  
 ```
@@ -33,7 +34,9 @@ El script de inicio arranca nodemon
 ```
 
 ## Desarrollo  
+
 ### Archivo www  
+
 Cambiamos el debug por un console.log() para visualizar la información por consola  
 ```
 /**
@@ -57,7 +60,8 @@ function onListening() {
 | / | GET | ./ | |  
 | / | POST | ./ | |  
 
-## Changelog 
+## Changelog  
+
 - Versión v.0.0.0  
     - Proyecto base   
   
