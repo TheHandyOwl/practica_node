@@ -4,10 +4,10 @@ Desarrollar el software que se ejecutará en el servidor dando servicio a una a
 
 ## Tabla de contenido  
 
-* [Repositorio GitHub](#repositorio-gitHub)  
-* [Instalación](#instalación)  
+* [Repositorio GitHub](#repositorio-github)  
+* [Instalación](#instalacion)  
   * [Dependencias necesarias](#dependencias-necesarias)  
-  * [Archivo ./bin/www](#archivo-./bin/www)  
+  * [Archivo www](#archivo-www)  
 * [Desarrollo](#desarrollo)  
 * [Rutas](#rutas)  
 * [Changelog](#changelog)  
@@ -33,7 +33,7 @@ El script de inicio arranca nodemon
 ```
 
 ## Desarrollo  
-### Archivo ./bin/www  
+### Archivo www  
 Cambiamos el debug por un console.log() para visualizar la información por consola  
 ```
 /**
@@ -50,7 +50,7 @@ function onListening() {
 }
 ```
 
-## Rutas 
+## Rutas  
 
 | Ruta | Tipo | Archivo | Descripción |    
 | ------------- | ------------- | ------------- | ------------- |  
