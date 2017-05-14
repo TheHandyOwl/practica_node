@@ -16,7 +16,7 @@ Desarrollar el software que se ejecutará en el servidor dando servicio a una a
 
 [https://github.com/TheHandyOwl/practica_node](https://github.com/TheHandyOwl/practica_node)  
 
-## Instalación  
+## Instalacion  
 
 ### Dependencias necesarias  
 
