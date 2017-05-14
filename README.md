@@ -10,13 +10,13 @@ Desarrollar el software que se ejecutará en el servidor dando servicio a una a
 [Rutas](#router)  
 [Changelog](#changelog)  
 
-## Repositorio GitHub {#repo}  
+## Repositorio GitHub  
 
 [https://github.com/TheHandyOwl/practica_node](https://github.com/TheHandyOwl/practica_node)  
 
-## Instalación {#install}  
+## Instalación  
 
-### Dependencias necesarias
+### Dependencias necesarias  
 Las dependencias locales pueden consultarse en el archivo package.json.  
 Para instalarlas desde el directorio raíz de la aplicación, ejecutando el siguiente comando:  
 ```
@@ -30,7 +30,7 @@ El script de inicio arranca nodemon
   },
 ```
 
-## Desarrollo {#dev}  
+## Desarrollo  
 ### Archivo ./bin/www  
 Cambiamos el debug por un console.log() para visualizar la información por consola  
 ```
@@ -48,15 +48,15 @@ function onListening() {
 }
 ```
 
-## Rutas {#router}  
+## Rutas 
 
 | Ruta | Tipo | Archivo | Descripción |    
 | ------------- | ------------- | ------------- | ------------- |  
 | / | GET | ./ | |  
 | / | POST | ./ | |  
 
-## Changelog {#changelog}  
-- Versión v.1.0.0  
+## Changelog 
+- Versión v.0.0.0  
     - Proyecto base   
   
 - Versión v.2.0.0  
