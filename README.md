@@ -4,11 +4,13 @@ Desarrollar el software que se ejecutará en el servidor dando servicio a una a
 
 ## Tabla de contenido  
 
-[Repositorio GitHub](#repo)  
-[Instalación](#install)  
-[Desarrollo](#dev)  
-[Rutas](#router)  
-[Changelog](#changelog)  
+* [Repositorio GitHub](#repositorio-gitHub)  
+* [Instalación](#instalación)  
+  * [Dependencias necesarias](#dependencias-necesarias)  
+  * [Archivo ./bin/www](#archivo-./bin/www)  
+* [Desarrollo](#desarrollo)  
+* [Rutas](#rutas)  
+* [Changelog](#changelog)  
 
 ## Repositorio GitHub  
 
