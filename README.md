@@ -5,7 +5,7 @@ Desarrollar el software que se ejecutará en el servidor dando servicio a una a
 ## Tabla de contenido  
 
 * [Repositorio GitHub](#repositorio-github)  
-* [Instalación](#instalacion)  
+* [Instalacion](#instalacion)  
   * [Dependencias necesarias](#dependencias-necesarias)  
   * [Archivo www](#archivo-www)  
 * [Desarrollo](#desarrollo)  
@@ -33,7 +33,7 @@ El script de inicio arranca nodemon
   },
 ```
 
-## Desarrollo  
+## Desarrollo  
 
 ### Archivo www  
 
