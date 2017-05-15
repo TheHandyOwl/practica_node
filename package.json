@@ -1,9 +1,9 @@
 {
   "name": "practica-node",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www",
+    "start": "node ./bin/www",
     "setup": "npm install",
     "sample": "node ./lib/sample_data/install_db"
   },
