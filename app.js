@@ -9,9 +9,6 @@ require('./lib/connectMongoose');
 require('./models/Anuncio');
 require('./models/Usuario');
 
-var index = require('./routes/index');
-var users = require('./routes/users');
-
 var app = express();
 
 // view engine setup
@@ -26,8 +23,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-app.use('/users', users);
+app.use('/', require('./routes/index'));
+app.use('/api_v1/anuncios', require('./routes/api_v1/anuncios'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -38,13 +35,24 @@ app.use(function(req, res, next) {
 
 // error handler
 app.use(function(err, req, res, next) {
+
+  res.status(err.status || 500);
+  
+  if ( isAPI( req ) ) {
+    res.json( { success: false, error: err } );
+    return;
+  }
+
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   // render the error page
-  res.status(err.status || 500);
   res.render('error');
 });
+
+function isAPI ( req ) {
+  return req.originalUrl.indexOf('/api_v') === 0;
+}
 
 module.exports = app;
