@@ -105,3 +105,6 @@ El script de inicio arranca nodemon
 - Versión v.3.0.0  
     - Añadimos mongoose  
     - Añadimos datos de prueba      
+
+- Versión v.3.0.1  
+    - Cambiamos script de inicio setup a installDB  
