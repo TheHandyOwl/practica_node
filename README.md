@@ -108,3 +108,7 @@ El script de inicio arranca node
 
 - Versión v.3.0.1  
     - Cambiamos script de inicio setup a installDB  
+
+- Versión v.3.1.0  
+    - Creamos la ruta para anuncios
+    - Creamos filtros en anuncios  
