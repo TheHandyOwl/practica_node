@@ -6,6 +6,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 require('./lib/connectMongoose');
+require('./models/Anuncio');
+require('./models/Usuario');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
