@@ -1,6 +1,7 @@
 # https://github.com/github/gitignore
 ##################################################
 
+
 # Schema:
 ##################################################
 # Mac.gitignore
@@ -37,6 +38,7 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
 
 # Node.gitignore
 ##################################################

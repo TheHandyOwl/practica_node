@@ -4,19 +4,22 @@ Desarrollar el software que se ejecutará en el servidor dando servicio a una a
 
 ## Tabla de contenido  
 
-[Repositorio GitHub](#repo)  
-[Instalación](#install)  
-[Desarrollo](#dev)  
-[Rutas](#router)  
-[Changelog](#changelog)  
+* [Repositorio GitHub](#repositorio-github)  
+* [Instalacion](#instalacion)  
+  * [Dependencias necesarias](#dependencias-necesarias)  
+  * [Archivo www](#archivo-www)  
+* [Desarrollo](#desarrollo)  
+* [Rutas](#rutas)  
+* [Changelog](#changelog)  
 
-## Repositorio GitHub {#repo}  
+## Repositorio GitHub  
 
 [https://github.com/TheHandyOwl/practica_node](https://github.com/TheHandyOwl/practica_node)  
 
-## Instalación {#install}  
+## Instalacion  
 
-### Dependencias necesarias
+### Dependencias necesarias  
+
 Las dependencias locales pueden consultarse en el archivo package.json.  
 Para instalarlas desde el directorio raíz de la aplicación, ejecutando el siguiente comando:  
 ```
@@ -31,13 +34,15 @@ npm run setup
 El script de inicio arranca nodemon  
 ```
   "scripts": {
-    "start": "nodemon ./bin/www",
+    "start": "node ./bin/www",
     "setup": "npm install"
   },
 ```
 
-## Desarrollo {#dev}  
-### Archivo ./bin/www  
+## Desarrollo  
+
+### Archivo www  
+
 Cambiamos el debug por un console.log() para visualizar la información por consola  
 ```
 /**
@@ -69,7 +74,9 @@ El script de inicio arranca nodemon
     "setup": "npm install",
     "sample": "node ./lib/sample_data/install_db"
   },
-```
+```  
+
+
 ## Rutas {#router}  
 
 | Ruta | Tipo | Archivo | Descripción |    
@@ -77,8 +84,9 @@ El script de inicio arranca nodemon
 | / | GET | ./ | |  
 | / | POST | ./ | |  
 
-## Changelog {#changelog}  
-- Versión v.1.0.0  
+## Changelog  
+
+- Versión v.0.0.0  
     - Proyecto base   
   
 - Versión v.2.0.0  
@@ -97,3 +105,6 @@ El script de inicio arranca nodemon
 - Versión v.3.0.0  
     - Añadimos mongoose  
     - Añadimos datos de prueba      
+
+- Versión v.3.0.1  
+    - Cambiamos script de inicio setup a installDB  
