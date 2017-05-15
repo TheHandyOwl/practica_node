@@ -1,9 +1,11 @@
 {
   "name": "practica-node",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "node ./bin/www",
+    "setup": "npm install",
+    "sample": "node ./lib/sample_data/install_db"
   },
   "dependencies": {
     "body-parser": "~1.17.1",
@@ -13,6 +15,7 @@
     "express": "~4.15.2",
     "mongoose": "^4.9.9",
     "morgan": "~1.8.1",
+    "os": "^0.1.1",
     "serve-favicon": "~2.4.2"
   }
 }
