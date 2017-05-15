@@ -31,7 +31,7 @@ O también dejando desde npm
 npm run setup
 ```
 
-El script de inicio arranca nodemon  
+El script de inicio arranca node  
 ```
   "scripts": {
     "start": "node ./bin/www",
@@ -67,10 +67,10 @@ La carga de datos se inicia con:
 npm run sample
 ```
 
-El script de inicio arranca nodemon  
+El script de inicio arranca node  
 ```
   "scripts": {
-    "start": "nodemon ./bin/www",
+    "start": "node ./bin/www",
     "setup": "npm install",
     "sample": "node ./lib/sample_data/install_db"
   },
@@ -108,3 +108,7 @@ El script de inicio arranca nodemon
 
 - Versión v.3.0.1  
     - Cambiamos script de inicio setup a installDB  
+
+- Versión v.3.1.0  
+    - Creamos la ruta para anuncios
+    - Creamos filtros en anuncios  
