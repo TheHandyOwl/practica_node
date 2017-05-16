@@ -112,3 +112,8 @@ El script de inicio arranca node
 - Versión v.3.1.0  
     - Creamos la ruta para anuncios
     - Creamos filtros en anuncios  
+
+- Versión v.3.2.0  
+    - Creamos la ruta para 1 anuncio en concreto, pasado como parámetro  
+    
+    
