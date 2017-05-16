@@ -52,4 +52,16 @@ router.get('/', (req, res, next) => {
     });
 });
 
+/* GET /apiv1/anuncios/:id */
+router.get('/:id', (req, res, next) => {
+
+    Anuncio.find({ _id : req.params.id }).exec((err, anuncio) => {
+        if (err) {
+            next(err);
+            return;
+        }
+        res.json( { success: true, result: anuncio } );
+    });
+});
+
 module.exports = router;
