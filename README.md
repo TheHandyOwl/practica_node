@@ -116,4 +116,9 @@ El script de inicio arranca node
 - Versión v.3.2.0  
     - Creamos la ruta para 1 anuncio en concreto, pasado como parámetro  
     
-    
+- Versión v.3.3.0  
+    - Creamos la ruta para validar usuarios  
+    - Hash de contraseña al guardar el usuario  
+    - Hash de contraseña al validar el usuario  
+    - Se prueba la carga masiva, y las contraseñas se cifran    
+        
