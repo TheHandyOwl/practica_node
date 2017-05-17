@@ -3,6 +3,7 @@
 var express = require('express');
 var router = express.Router();
 const Usuario = require('../../models/Usuario');
+const authenticate = require('../../lib/authenticate');
 
 //POST /apiv1/authenticate {user: 'James', pass: 'passwordJames'}
 router.post( '/authenticate', function (req, res, next) {
@@ -28,7 +29,7 @@ router.post( '/authenticate', function (req, res, next) {
             res.json( { success: false, result: 'Acceso denegado' } );
             return;
         }
-        if ( usuario.clave !== req.body.clave ) {
+        if ( usuario.clave !== authenticate.hashIt(req.body.clave) ) {
             res.json( { success: false, result: 'Acceso denegado' } );
             return;
         }
