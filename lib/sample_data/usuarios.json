@@ -3,12 +3,14 @@
         {
             "nombre": "Jones",
             "email": "jones@invalid.com",
-            "clave": "passwordJones"
+            "clave": "passwordJones",
+            "lang": "en"
         },
         {
             "nombre": "James",
             "email": "james@invalid.com",
-            "clave": "passwordJames"
+            "clave": "passwordJames",
+            "lang": "es"
         }
     ]
 }
