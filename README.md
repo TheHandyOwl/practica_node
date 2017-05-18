@@ -121,4 +121,14 @@ El script de inicio arranca node
     - Hash de contraseña al guardar el usuario  
     - Hash de contraseña al validar el usuario  
     - Se prueba la carga masiva, y las contraseñas se cifran    
-        
+
+    
+- Versión v.4.0.0  
+    - Separamos las rutas de usuarios  
+    - Ruta usuarios para validar el inicio de sesión, llamado signIn  
+    - Ruta usuarios genérica que no muestra nada por el momento, y ruta modificada con parámetro :nombre para facilitar información parcial de un usuario  
+    - Modelo de datos de usuario acepta parámetro de idioma (lang). 
+    - Datos de carga modificados con idioma  
+    - hash para contraseñas. 
+    - Firma para generar tokens. 
+    - Comprobación de un token. 
