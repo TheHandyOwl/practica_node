@@ -30,7 +30,7 @@ router.post( '/', function (req, res, next) {
             res.json( { success: false, result: {error: 401, message: 'Acceso denegado' } } );
             return;
         }
-        
+
        // Crear un token
         var token = authenticate.signIt(usuario._id);
         res.json( {success: true, result: {message: 'Usuario autenticado', token: token} } );
