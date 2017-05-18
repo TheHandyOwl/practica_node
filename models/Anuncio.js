@@ -7,7 +7,18 @@ const anuncioSchema = mongoose.Schema({
     venta: String,
     precio: Number,
     foto: String,
-    tags: [String]
+    tags: [String],
+    created_at: Date,
+    updated_at: Date
+});
+
+anuncioSchema.pre('save', function(next) {
+  var currentDate = new Date();
+  this.updated_at = currentDate;
+  if (!this.created_at) {
+    this.created_at = currentDate;
+  }
+  next();
 });
 
 anuncioSchema.statics.list = function (filter, limit, skip, sort, fields, callback) {

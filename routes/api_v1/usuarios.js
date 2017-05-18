@@ -5,36 +5,34 @@ var router = express.Router();
 const Usuario = require('../../models/Usuario');
 const authenticate = require('../../lib/authenticate');
 
-//POST /apiv1/authenticate {user: 'James', pass: 'passwordJames'}
-router.post( '/authenticate', function (req, res, next) {
+var jwt = require('jsonwebtoken');
 
-    console.log(req.body);
-
-    if(!req.body.nombre){
-        res.json( { success: false, result: 'Introduzca nombre de usuario para validarse' } );
+/* GET /api_v1/usuarios/:id */
+router.get('/:nombre', (req, res, next) => {
+    var token = req.body.token || req.query.token || req.headers['x-access-token'] || req.headers.token;
+    if(!token) {
+        return res.json({ success: false, result: { error: 401, mensaje: "Tu petición no tiene cabecera de autorización"}});
+    }
+    let message = authenticate.validateIt(token);
+    if(message.result.error){
+        res.json( message );
         return;
     }
-    if(!req.body.clave){
-        res.json( { success: false, result: 'Introduzca clave de usuario para validarse' } );
-        return;
-    }
 
-    Usuario.findOne({ nombre : req.body.nombre }).exec((err, usuario) => {
-        console.log ('Err:', err, 'Usuario', usuario);
+    console.log('Usuario: ', req.params.nombre);
+    Usuario.findOne( { nombre: req.params.nombre} ).exec((err, usuario) => {
+        console.log('Usuario: ', usuario);
         if (err) {
             next(err);
             return;
         }
-        if ( usuario === null ) {
-            res.json( { success: false, result: 'Acceso denegado' } );
-            return;
+        if ( usuario !== null ) {
+            message.result.usuario = {
+                nombre: usuario.nombre,
+                fecha_alta: usuario.created_at
+            };
         }
-        if ( usuario.clave !== authenticate.hashIt(req.body.clave) ) {
-            res.json( { success: false, result: 'Acceso denegado' } );
-            return;
-        }
-
-        res.json( { success: true, result: usuario } );
+    res.json( message );
 
     });
 
