@@ -122,7 +122,6 @@ El script de inicio arranca node
     - Hash de contraseña al validar el usuario  
     - Se prueba la carga masiva, y las contraseñas se cifran    
 
-    
 - Versión v.4.0.0  
     - Separamos las rutas de usuarios  
     - Ruta usuarios para validar el inicio de sesión, llamado signIn  
