@@ -21,7 +21,7 @@ usuarioSchema.pre('save', function(next) {
     if (this.clave) {
         this.clave = authenticate.hashIt(this.clave);
     }
-    this.lang = lang || 'en';
+    this.lang = this.lang || 'en';
     next();
 });
 
