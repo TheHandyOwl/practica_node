@@ -5,11 +5,11 @@ var router = express.Router();
 const Usuario = require('../../models/Usuario');
 const authenticate = require('../../lib/authenticate');
 
-//POST /api_v1/signIn {user: 'James', pass: 'passwordJames'}
+//POST /api_v1/signIn {email: 'james@invalid.com', clave: 'passwordJames'}
 router.post( '/', function (req, res, next) {
 
-    if(!req.body.nombre){
-        res.json( { success: false, result: { error: 401, mensaje: 'Introduzca nombre de usuario para validarse' } } );
+    if(!req.body.email){
+        res.json( { success: false, result: { error: 401, mensaje: 'Introduzca email de usuario para validarse' } } );
         return;
     }
     if(!req.body.clave){
@@ -17,7 +17,7 @@ router.post( '/', function (req, res, next) {
         return;
     }
 
-    Usuario.findOne({ nombre : req.body.nombre }).exec((err, usuario) => {
+    Usuario.findOne({ email : req.body.email }).exec((err, usuario) => {
         if (err) {
             next(err);
             return;

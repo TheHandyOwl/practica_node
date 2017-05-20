@@ -131,3 +131,9 @@ El script de inicio arranca node
     - hash para contraseñas. 
     - Firma para generar tokens. 
     - Comprobación de un token. 
+
+- Versión v.4.1.0  
+    - Creamos ruta para registrar usuarios  
+    - Se corrige el ejemplo de la ruta para validar usuarios  
+    - Se corrigen los campos por los que se valida el usuario  
+    - Se crea un índice en la BBDD para consultar por email
