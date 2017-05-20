@@ -76,7 +76,6 @@ El script de inicio arranca node
   },
 ```  
 
-
 ## Rutas  
 
 | Archivo | Tipo | Ruta | Descripción |    
@@ -86,6 +85,7 @@ El script de inicio arranca node
 | /api_v1/anuncios | GET | /:id | Muestra 1 anuncio en concreto |  
 | /api_v1/singIn | POST | / | Valida el acceso con email y clave |  
 | /api_v1/singUp | POST | / | Registra u1 usuario nuevo con nombre, email(válido) y clave |  
+| /api_v1/tags | GET | / | Muestra el listado de tags |  
 | /api_v1/usuarios | GET | /:nombre | Pasando el usuario, muestra su información pública o privada |  
 
 ## Changelog  
@@ -146,4 +146,8 @@ El script de inicio arranca node
 - Versión v.4.1.1  
     - Protegemos las rutas de anuncios con token
     - Ponemos estados a las respuestas de la ruta de usuarios  
+
+- Versión v.4.2.0  
+    - Añadimos ruta para visualizar los tags  
+    - Documentamos la nueva ruta en README.md  
     
