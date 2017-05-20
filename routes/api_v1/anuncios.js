@@ -9,6 +9,7 @@ const authenticate = require('../../lib/authenticate');
 router.get('/', (req, res, next) => {
 
     var token = req.body.token || req.query.token || req.headers['x-access-token'] || req.headers.token;
+
     if(!token) {
         res.json({ success: false, result: { error: 401, mensaje: "Tu petición no tiene cabecera de autorización"}});
         res.status(401);
@@ -76,8 +77,8 @@ router.get('/', (req, res, next) => {
 /* GET /apiv1/anuncios/:id */
 router.get('/:id', (req, res, next) => {
 
-console.log(req.params);
     var token = req.body.token || req.query.token || req.headers['x-access-token'] || req.headers.token;
+
     if(!token) {
         res.json({ success: false, result: { error: 401, mensaje: "Tu petición no tiene cabecera de autorización"}});
         res.status(401);
@@ -90,7 +91,6 @@ console.log(req.params);
         return;
     }
     if(!req.params.id || req.params.id.length !== 24){
-        console.log('Falta algo');
         res.json( { success: false, result: { error: 404, mensaje: 'El anuncio ' + req.params.nombre +'-' + req.params.id + 'no existe'} } );
         res.status(404);
         return;
@@ -101,7 +101,6 @@ console.log(req.params);
             next(err);
             return;
         }
-        console.log('Anuncio: ',anuncio);
         if (!anuncio || anuncio.length === 0){
             res.json( { success: true, result: 'El anuncio ' + req.params.id + 'no existe' } );
             res.status(404);
