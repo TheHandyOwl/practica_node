@@ -81,12 +81,12 @@ El script de inicio arranca node
 
 | Archivo | Tipo | Ruta | Descripción |    
 | ------------- | ------------- | ------------- | ------------- |  
-| /index | GET | ./ | No se usa por el momento |  
-| /anuncios | GET | ./ | Muestra todos los anuncios. Tiene filtros (acepta querys)|  
-| /anuncios | GET | ./:id | Muestra 1 anuncio en concreto |  
-| /singIn | POST | ./ | Valida el acceso con email y clave |  
-| /singUp | POST | ./ | Registra u1 usuario nuevo con nombre, email(válido) y clave |  
-| /usuarios | GET | ./:nombre | Pasando el usuario, muestra su información pública o privada |  
+| /index | GET | / | No se usa por el momento |  
+| /api_v1/anuncios | GET | / | Muestra todos los anuncios. Tiene filtros (acepta querys)|  
+| /api_v1/anuncios | GET | /:id | Muestra 1 anuncio en concreto |  
+| /api_v1/singIn | POST | / | Valida el acceso con email y clave |  
+| /api_v1/singUp | POST | / | Registra u1 usuario nuevo con nombre, email(válido) y clave |  
+| /api_v1/usuarios | GET | /:nombre | Pasando el usuario, muestra su información pública o privada |  
 
 ## Changelog  
 
