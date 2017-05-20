@@ -10,18 +10,22 @@ router.post( '/', function (req, res, next) {
 
     if(!req.body.nombre){
         res.json( { success: false, result: { error: 401, mensaje: 'Introduzca nombre de usuario para registrarse' } } );
+        res.status(401);
         return;
     };
     if(!req.body.email){
         res.json( { success: false, result: { error: 401, mensaje: 'Introduzca email de usuario para registrarse' } } );
+        res.status(401);
         return;
     };
     if(!req.body.clave){
         res.json( { success: false, result: { error: 401, mensaje: 'Introduzca clave de usuario para registrarse' } } );
+        res.status(401);
         return;
     };
     if(!customValidator.comprobarEmail(req.body.email)){
         res.json( { success: false, result: { error: 401, mensaje: 'Introduzca un mail válido para registrarse' } } );
+        res.status(401);
         return;
     };
 
