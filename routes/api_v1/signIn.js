@@ -5,7 +5,7 @@ var router = express.Router();
 const Usuario = require('../../models/Usuario');
 const authenticate = require('../../lib/authenticate');
 
-//POST /api_v1/signIn {user: 'James', pass: 'passwordJames'}
+//POST /api_v1/signIn {nombre: 'James', clave: 'passwordJames'}
 router.post( '/', function (req, res, next) {
 
     if(!req.body.nombre){
