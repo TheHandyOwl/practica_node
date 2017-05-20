@@ -11,15 +11,15 @@ router.post( '/', function (req, res, next) {
     if(!req.body.nombre){
         res.json( { success: false, result: { error: 401, mensaje: 'Introduzca nombre de usuario para registrarse' } } );
         return;
-    }
+    };
     if(!req.body.email){
         res.json( { success: false, result: { error: 401, mensaje: 'Introduzca email de usuario para registrarse' } } );
         return;
-    }
+    };
     if(!req.body.clave){
         res.json( { success: false, result: { error: 401, mensaje: 'Introduzca clave de usuario para registrarse' } } );
         return;
-    }
+    };
     if(!customValidator.comprobarEmail(req.body.email)){
         res.json( { success: false, result: { error: 401, mensaje: 'Introduzca un mail válido para registrarse' } } );
         return;
@@ -67,7 +67,6 @@ router.post( '/', function (req, res, next) {
                 resolve();
                 return;
             }
-            console.log('Usuario', usuario);
             let usuarioAlta = new Usuario(usuario);
             usuarioAlta.save( (err, usuarioGuardado) => {
                 if (err) {
@@ -82,11 +81,9 @@ router.post( '/', function (req, res, next) {
 
     Promise.all([buscarNombre(req.body.nombre), buscarEmail(req.body.email)])
     .then( (rechazarAlta) => {
-        console.log('prime:', rechazarAlta);
         return aceptarAlta(usuario, rechazarAlta);
     })
     .catch( (err) => {
-        console.log('Error: ', err);
         res.json( { success: false, result: { error: err, mensaje: 'Se ha produciso un error al registrar el usuario: ', usuario } } );
     } );
 
