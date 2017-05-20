@@ -10,10 +10,12 @@ router.post( '/', function (req, res, next) {
 
     if(!req.body.email){
         res.json( { success: false, result: { error: 401, mensaje: 'Introduzca email de usuario para validarse' } } );
+        res.status(401);
         return;
     }
     if(!req.body.clave){
         res.json( { success: false, result: { error: 401, mensaje: 'Introduzca clave de usuario para validarse' } } );
+        res.status(401);
         return;
     }
 
@@ -24,10 +26,12 @@ router.post( '/', function (req, res, next) {
         }
         if ( usuario === null ) {
             res.json( { success: false, result: {error: 401, message: 'Acceso denegado' } } );
+            res.status(401);
             return;
         }
         if ( usuario.clave !== authenticate.hashIt(req.body.clave) ) {
             res.json( { success: false, result: {error: 401, message: 'Acceso denegado' } } );
+            res.status(401);
             return;
         }
 
