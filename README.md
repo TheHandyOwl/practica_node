@@ -141,5 +141,9 @@ El script de inicio arranca node
     - Se corrige el ejemplo de la ruta para validar usuarios  
     - Se corrigen los campos por los que se valida el usuario  
     - Se crea un índice en la BBDD para consultar por email
-    - Se documentan las primeras rutas en el fichero README.md
+    - Se documentan las primeras rutas en el fichero README.md  
+
+- Versión v.4.1.1  
+    - Protegemos las rutas de anuncios con token
+    - Ponemos estados a las respuestas de la ruta de usuarios  
     
