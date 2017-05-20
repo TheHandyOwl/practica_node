@@ -79,10 +79,14 @@ El script de inicio arranca node
 
 ## Rutas {#router}  
 
-| Ruta | Tipo | Archivo | Descripción |    
+| Archivo | Tipo | Ruta | Descripción |    
 | ------------- | ------------- | ------------- | ------------- |  
-| / | GET | ./ | |  
-| / | POST | ./ | |  
+| /index | GET | ./ | No se usa por el momento |  
+| /anuncios | GET | ./ | Muestra todos los anuncios. Tiene filtros (acepta querys)|  
+| /anuncios | GET | ./ | Muestra 1 anuncio en concreto |  
+| /singIn | POST | ./ | Valida el acceso con email y clave |  
+| /singUp | POST | ./ | Registra u1 usuario nuevo con nombre, email(válido) y clave |  
+| /usuarios | GET | ./ | Pasando el usuario, muestra su información pública o privada |  
 
 ## Changelog  
 
@@ -137,3 +141,5 @@ El script de inicio arranca node
     - Se corrige el ejemplo de la ruta para validar usuarios  
     - Se corrigen los campos por los que se valida el usuario  
     - Se crea un índice en la BBDD para consultar por email
+    - Se documentan las primeras rutas en el fichero README.md
+    
