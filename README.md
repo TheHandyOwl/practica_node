@@ -77,7 +77,7 @@ El script de inicio arranca node
 ```  
 
 
-## Rutas {#router}  
+## Rutas  
 
 | Archivo | Tipo | Ruta | Descripción |    
 | ------------- | ------------- | ------------- | ------------- |  
