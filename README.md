@@ -83,10 +83,10 @@ El script de inicio arranca node
 | ------------- | ------------- | ------------- | ------------- |  
 | /index | GET | ./ | No se usa por el momento |  
 | /anuncios | GET | ./ | Muestra todos los anuncios. Tiene filtros (acepta querys)|  
-| /anuncios | GET | ./ | Muestra 1 anuncio en concreto |  
+| /anuncios | GET | ./:id | Muestra 1 anuncio en concreto |  
 | /singIn | POST | ./ | Valida el acceso con email y clave |  
 | /singUp | POST | ./ | Registra u1 usuario nuevo con nombre, email(válido) y clave |  
-| /usuarios | GET | ./ | Pasando el usuario, muestra su información pública o privada |  
+| /usuarios | GET | ./:nombre | Pasando el usuario, muestra su información pública o privada |  
 
 ## Changelog  
 
