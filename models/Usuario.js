@@ -5,7 +5,7 @@ const authenticate = require('../lib/authenticate');
 
 const usuarioSchema = mongoose.Schema({
     nombre: String,
-    email: String,
+    email: { type: String, index: true },
     clave: String,
     lang: String,
     created_at: Date,
