@@ -23,6 +23,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Rutas estáticas
+app.use('/images', express.static('./public/images'));
+
+// Rutas importadas
 app.use('/', require('./routes/index'));
 app.use('/api_v1/anuncios', require('./routes/api_v1/anuncios'));
 app.use('/api_v1/signIn', require('./routes/api_v1/signIn'));
