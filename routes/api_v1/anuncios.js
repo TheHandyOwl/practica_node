@@ -75,8 +75,8 @@ router.get('/', (req, res, next) => {
             return;
         }
         const anunciosConRuta = anuncios.map(function (anuncio) {
-            let rutaFinal = path.join('http://',req.header('host'),'/images/',anuncio.foto);
-            return rutaFinal;
+            anuncio.foto = path.join('http://',req.header('host'),'/images/',anuncio.foto);
+            return anuncio;
         });
 
         res.json( { success: true, result: anunciosConRuta } );
