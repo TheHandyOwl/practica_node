@@ -22,7 +22,7 @@ router.get('/:nombre', (req, res, next) => {
         return;
     }
 
-    Usuario.findOne( { nombre: req.params.nombre } ).exec((err, usuario) => {
+    Usuario.findOne( { nombre: new RegExp( (req.params.nombre), 'ig' ) } ).exec((err, usuario) => {
         if (err) {
             res.json( { success: false, result: { mensaje: 'Error al buscar el usuario ' + req.params.nombre, token: token, decoded: decoded } } );
             res.status(500);
