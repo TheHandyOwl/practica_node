@@ -5,7 +5,7 @@ var router = express.Router();
 const Usuario = require('../../models/Usuario');
 const customValidator = require('../../lib/customValidator');
 
-//POST /api_v1/signUp {nombre: 'James', email: 'emailJames@invalid.com', clave: 'passwordJames'}
+//POST /api_v1/signUp {nombre: 'user', email: 'user@invalid.com', clave: 'password'}
 router.post( '/', function (req, res, next) {
 
     if(!req.body.nombre){
@@ -37,9 +37,10 @@ router.post( '/', function (req, res, next) {
 
     function buscarNombre (nombre) {
         return new Promise((resolve, reject) => {
-            Usuario.findOne({ nombre : nombre }).exec((err, usuario) => {
+            Usuario.findOne({ nombre : new RegExp( (nombre), 'ig' ) }).exec((err, usuario) => {
                 if (err) {
                     res.json( { success: false, result: {error: err } } );
+                    res.status(500);
                     reject;
                 }
                 if ( usuario === null ) {
@@ -51,9 +52,10 @@ router.post( '/', function (req, res, next) {
     };
     function buscarEmail (email) {
         return new Promise((resolve, reject) => {
-            Usuario.findOne({ email : email }).exec((err, usuario) => {
+            Usuario.findOne({ email : new RegExp( (email), 'ig' ) }).exec((err, usuario) => {
                 if (err) {
                     res.json( { success: false, result: {error: err } } );
+                    res.status(500);
                     reject;
                 }
                 if ( usuario === null ) {
@@ -68,13 +70,17 @@ router.post( '/', function (req, res, next) {
             datos = datos.filter(Boolean);
             if( datos.length !== 0 ) {
                 res.json( { success: false, result: { error: 'Alta rechazada', mensaje: 'Coindidencias encontradas: ', datos } } );
+                res.status(401);
                 resolve();
                 return;
             }
             let usuarioAlta = new Usuario(usuario);
             usuarioAlta.save( (err, usuarioGuardado) => {
                 if (err) {
-                    reject(err);
+                    res.json( { success: false, result: { error: err, mensaje: 'Errores de validación en el alta de usuario: ', usuario } } );
+                    res.status(401);
+                    resolve();
+                    return;
                 };
                 res.json( { success: true, result: { mensaje: 'Se ha dado de alta al usuario: ', usuario } } );
                 resolve();
@@ -88,7 +94,8 @@ router.post( '/', function (req, res, next) {
         return aceptarAlta(usuario, rechazarAlta);
     })
     .catch( (err) => {
-        res.json( { success: false, result: { error: err, mensaje: 'Se ha produciso un error al registrar el usuario: ', usuario } } );
+        res.json( { success: false, result: {error: err } } );
+        res.status(500);
     } );
 
 });

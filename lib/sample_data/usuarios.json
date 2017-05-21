@@ -1,15 +1,9 @@
 {
     "usuarios": [
         {
-            "nombre": "Jones",
-            "email": "Jones@invalid.com",
-            "clave": "passwordJones"
-        },
-        {
-            "nombre": "James",
-            "email": "James@invalid.com",
-            "clave": "passwordJames",
-            "lang": "es"
+            "nombre": "User",
+            "email": "user@invalid.com",
+            "clave": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8"
         }
     ]
 }
