@@ -2,13 +2,12 @@
     "usuarios": [
         {
             "nombre": "Jones",
-            "email": "jones@invalid.com",
-            "clave": "passwordJones",
-            "lang": "en"
+            "email": "Jones@invalid.com",
+            "clave": "passwordJones"
         },
         {
             "nombre": "James",
-            "email": "james@invalid.com",
+            "email": "James@invalid.com",
             "clave": "passwordJames",
             "lang": "es"
         }
