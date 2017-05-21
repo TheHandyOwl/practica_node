@@ -5,8 +5,6 @@ var router = express.Router();
 const Anuncio = require('../../models/Anuncio');
 const authenticate = require('../../lib/authenticate');
 
-var path = require('path');
-
 
 /* GET /apiv1/anuncios */
 router.get('/', (req, res, next) => {
@@ -75,7 +73,7 @@ router.get('/', (req, res, next) => {
             return;
         }
         const anunciosConRuta = anuncios.map(function (anuncio) {
-            anuncio.foto = path.join('http://',req.header('host'),'/images/',anuncio.foto);
+            anuncio.foto = 'http://' + req.header('host') + '/images/' + anuncio.foto;
             return anuncio;
         });
 
@@ -116,6 +114,8 @@ router.get('/:id', (req, res, next) => {
             res.status(404);
             return;
         }
+
+        anuncio.foto = 'http://' + req.header('host') + '/images/' + anuncio.foto;
         res.json( { success: true, result: anuncio } );
         return;
     });
