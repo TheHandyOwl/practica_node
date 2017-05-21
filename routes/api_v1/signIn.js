@@ -19,7 +19,7 @@ router.post( '/', function (req, res, next) {
         return;
     }
 
-    Usuario.findOne({ email : req.body.email }).exec((err, usuario) => {
+    Usuario.findOne({ email : new RegExp( (req.body.email), 'ig' ) }).exec((err, usuario) => {
         if (err) {
             next(err);
             return;
