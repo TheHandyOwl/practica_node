@@ -46,7 +46,7 @@ router.get('/:nombre', (req, res, next) => {
 
         res.json( { success: true,
             result: {
-                mensaje: 'Información pública del usuario ' + req.params.nombre,
+                mensaje: 'Información pública del usuario ' + usuario.nombre,
                 infoPublicaUsuario: infoPublicaUsuario,
                 infoPrivadaUsuario: infoPrivadaUsuario,
                 infoServer: { mensaje: 'Otra información del servidor',

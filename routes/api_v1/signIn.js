@@ -5,7 +5,7 @@ var router = express.Router();
 const Usuario = require('../../models/Usuario');
 const authenticate = require('../../lib/authenticate');
 
-//POST /api_v1/signIn {email: 'james@invalid.com', clave: 'passwordJames'}
+//POST /api_v1/signIn {email: 'user@invalid.com', clave: 'password'}
 router.post( '/', function (req, res, next) {
 
     if(!req.body.email){
@@ -21,7 +21,8 @@ router.post( '/', function (req, res, next) {
 
     Usuario.findOne({ email : new RegExp( (req.body.email), 'ig' ) }).exec((err, usuario) => {
         if (err) {
-            next(err);
+            res.json( { success: false, result: {error: err } } );
+            res.status(500);
             return;
         }
         if ( usuario === null ) {

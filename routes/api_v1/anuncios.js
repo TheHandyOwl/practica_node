@@ -63,11 +63,12 @@ router.get('/', (req, res, next) => {
 
     Anuncio.list( filter, limit, skip, sort, fields, ( err, anuncios ) => {
         if (err) {
-            next(err);
+            res.json( { success: false, result: { error: 500, mensaje: 'Error al obtener los anuncios.' } } );
+            res.status(500);
             return;
         }
         if (anuncios.length === 0){
-            res.json( { success: true, result: 'No hay anuncios disponibles' } );
+            res.json( { success: false, result: { mensaje: 'No hay anuncios disponibles ' } } );
             return;
         }
         res.json( { success: true, result: anuncios } );
@@ -96,17 +97,19 @@ router.get('/:id', (req, res, next) => {
         return;
     }
 
-    Anuncio.findOne({ _id : req.params.id }).exec((err, anuncio) => {
+    Anuncio.findById(req.params.id).exec((err, anuncio) => {
         if (err) {
-            next(err);
+            res.json( { success: false, result: { error: 500, mensaje: 'Error al obtener el anuncio ' + req.params.id } } );
+            res.status(500);
             return;
         }
         if (!anuncio || anuncio.length === 0){
-            res.json( { success: true, result: 'El anuncio ' + req.params.id + 'no existe' } );
+            res.json( { success: true, result: 'El anuncio ' + req.params.id + ' no existe' } );
             res.status(404);
             return;
         }
         res.json( { success: true, result: anuncio } );
+        return;
     });
 });
 
