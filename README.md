@@ -37,6 +37,23 @@ El script de inicio arranca node
     "start": "node ./bin/www",
     "setup": "npm install"
   },
+  },
+```
+
+NOTA: Personalizar el usuario con permisos de escritura a la BBDD de MongoDB  
+Existen unos parámetros por defecto para usuario y password que deberán ser modificados a los valores configurados en el servidor de datos en uso.  
+```
+const server_name = 'localhost';  
+const server_ddbb = 'nodepop';  
+const server_user = 'server_user';  
+const server_password = 'server_password';  
+
+const server_string_connection = 'mongodb://' +  
+    server_user + ':' +  
+    server_password + '@' +  
+    server_name +  
+    '/' +  
+    server_ddbb;  
 ```
 
 ## Desarrollo  
@@ -162,3 +179,7 @@ El script de inicio arranca node
 - Versión v.4.2.3  
     - Se muestran las fotos en ruta estática  
     
+- Versión v.4.3.0  
+    - Añadimos autenticación a la cadena de conexión a MongoDB desde conectionMongoose  
+    - Se mantiene el valor de la BBDD por defecto, pero se anonimiza el usuario y la password  
+    - Se deberá modificar el usuario que escribe en la BBDD y su password  
