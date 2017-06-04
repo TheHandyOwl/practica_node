@@ -4,7 +4,7 @@ var express = require('express');
 var router = express.Router();
 const Usuario = require('../../models/Usuario');
 const authenticate = require('../../lib/authenticate');
-const modelsConfig = require('../../config/modelsConfig');
+const { models } = require('../../config/config');
 
 var jwt = require('jsonwebtoken');
 
@@ -23,7 +23,7 @@ router.get('/', (req, res, next) => {
 
     res.json( { success: true,
         result: {
-            mensaje: 'Listado de etiquetas: ' + modelsConfig.anuncios.tags.join(', '),
+            mensaje: 'Listado de etiquetas: ' + models.anuncios.tags.join(', '),
             token: token,
             decoded: decoded
         }
