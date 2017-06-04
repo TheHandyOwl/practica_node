@@ -1,7 +1,7 @@
 "use strict";
 
 const mongoose = require ('mongoose');
-const modelsConfig = require('../config/modelsConfig');
+const { models } = require('../config/config');
 
 const anuncioSchema = mongoose.Schema({
     nombre: {
@@ -22,7 +22,7 @@ const anuncioSchema = mongoose.Schema({
     tags: {
         type: [String],
         required: true,
-        enum: modelsConfig.anuncios.tags
+        enum: models.anuncios.tags
     },
     created_at: Date,
     updated_at: Date
