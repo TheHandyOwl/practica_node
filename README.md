@@ -5,6 +5,7 @@ Desarrollar el software que se ejecutará en el servidor dando servicio a una a
 ## Tabla de contenido  
 
 * [Repositorio GitHub](#repositorio-github)  
+* [Ejemplo AWS](#ejemplo-aws)  
 * [Instalacion](#instalacion)  
   * [Dependencias necesarias](#dependencias-necesarias)  
   * [Archivo www](#archivo-www)  
@@ -12,9 +13,15 @@ Desarrollar el software que se ejecutará en el servidor dando servicio a una a
 * [Rutas](#rutas)  
 * [Changelog](#changelog)  
 
+
 ## Repositorio GitHub  
 
-[https://github.com/TheHandyOwl/practica_node](https://github.com/TheHandyOwl/practica_node)  
+[https://github.com/TheHandyOwl/nodepop](https://github.com/TheHandyOwl/nodepop)  
+
+
+## Ejemplo AWS  
+
+[https://nodepop.thehandyowl.com/](https://nodepop.thehandyowl.com/)  
 
 ## Instalacion  
 
@@ -191,3 +198,4 @@ El script de inicio arranca node
     - Por defecto se deja la BBDD sin autenticar
     - Dejamos ejemplo de configuración de variables en config/config.js.example  
     - Cambiamos la clave de los tokens  
+    - Añadimos enlace a AWS para corregir la práctica en vivo  
