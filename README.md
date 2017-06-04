@@ -62,6 +62,7 @@ Revisar el archivo config.js.example y crear el archivo config.js con los datos 
 Por defecto la cadena de conexión a la BBDD no incluye usuario ni contraseña  
 NOTA: Para que se valide usuario y contraseña cambiar a config.db.db_auth = 'db_with_auth';  
 ```
+// ./lib/connectMongoose.js
 if (db.db_auth == 'db_without_auth') {
     server_string_connection = db.db_without_auth.server_string_connection;
 } else if (db.db_auth == 'db_with_auth') {
@@ -79,6 +80,7 @@ if (db.db_auth == 'db_without_auth') {
 
 Cambiamos el debug por un console.log() para visualizar la información por consola  
 ```
+// ./bin/www
 /**
  * Event listener for HTTP server "listening" event.
  */
@@ -211,3 +213,7 @@ El script de inicio arranca node
     - Dejamos ejemplo de configuración de variables en config/config.js.example  
     - Cambiamos la clave de los tokens  
     - Añadimos enlace a AWS para corregir la práctica en vivo  
+
+- Versión v.5.0.1  
+    - Añadimos página de inicio en el servidor node para facilitar la evaluación de la práctica  
+    - Mejoramos la documentación  
