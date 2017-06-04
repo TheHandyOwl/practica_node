@@ -52,7 +52,6 @@ El script de inicio arranca node
     "start": "node ./bin/www",
     "setup": "npm install"
   },
-  },
 ```
 
 
@@ -100,7 +99,7 @@ ADVERTENCIA: LAS COLECCIONES EXISTENTES SERAN ELIMINADAS
 
 La carga de datos se inicia con:  
 ```
-npm run sample
+npm run installDB
 ```
 
 El script de inicio arranca node  
