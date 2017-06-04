@@ -27,9 +27,7 @@ config.db.db_with_auth.server_string_connection = 'mongodb://' +
         config.db.db_with_auth.server_name + '/' + 
         config.db.db_with_auth.server_db;
 
-config.db.db_auth = {
-    auth: 'db_without_auth'
-}
+config.db.db_auth = 'db_without_auth';
 
 
 // Modelos
