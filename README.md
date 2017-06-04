@@ -2,6 +2,7 @@
 
 Desarrollar el software que se ejecutará en el servidor dando servicio a una app (API) de venta de artículos de segunda mano, llamada Nodepop.  
 
+
 ## Tabla de contenido  
 
 * [Repositorio GitHub](#repositorio-github)  
@@ -9,6 +10,7 @@ Desarrollar el software que se ejecutará en el servidor dando servicio a una a
 * [Instalacion](#instalacion)  
   * [Dependencias necesarias](#dependencias-necesarias)  
   * [Archivo www](#archivo-www)  
+* [MongoDB](#mongodb)  
 * [Desarrollo](#desarrollo)  
 * [Rutas](#rutas)  
 * [Changelog](#changelog)  
@@ -21,7 +23,13 @@ Desarrollar el software que se ejecutará en el servidor dando servicio a una a
 
 ## Ejemplo AWS  
 
+### Página inicial con css servido como archivo estático  
 [https://nodepop.thehandyowl.com/](https://nodepop.thehandyowl.com/)  
+
+### Imágenes estáticas servidas por nginx  
+[https://nodepop.thehandyowl.com/images/bici.jpg](https://nodepop.thehandyowl.com/images/bici.jpg)  
+[https://nodepop.thehandyowl.com/images/iphone.png](https://nodepop.thehandyowl.com/images/iphone.png)  
+
 
 ## Instalacion  
 
@@ -47,21 +55,23 @@ El script de inicio arranca node
   },
 ```
 
-NOTA: Personalizar el usuario con permisos de escritura a la BBDD de MongoDB  
-Existen unos parámetros por defecto para usuario y password que deberán ser modificados a los valores configurados en el servidor de datos en uso.  
-```
-const server_name = 'localhost';  
-const server_ddbb = 'nodepop';  
-const server_user = 'server_user';  
-const server_password = 'server_password';  
 
-const server_string_connection = 'mongodb://' +  
-    server_user + ':' +  
-    server_password + '@' +  
-    server_name +  
-    '/' +  
-    server_ddbb;  
+## MongoDB  
+
+Revisar el archivo config.js.example y crear el archivo config.js con los datos personalizados  
+Por defecto la cadena de conexión a la BBDD no incluye usuario ni contraseña  
+NOTA: Para que se valide usuario y contraseña cambiar a config.db.db_auth = 'db_with_auth';  
 ```
+if (db.db_auth == 'db_without_auth') {
+    server_string_connection = db.db_without_auth.server_string_connection;
+} else if (db.db_auth == 'db_with_auth') {
+    server_string_connection = db.db_with_auth.server_string_connection;
+} else {
+    console.log('Elige un tipo de validación para conectar a la BBDD');
+    exit (1);
+}
+```
+
 
 ## Desarrollo  
 
@@ -100,6 +110,7 @@ El script de inicio arranca node
   },
 ```  
 
+
 ## Rutas  
 
 | Archivo | Tipo | Ruta | Descripción |    
@@ -111,6 +122,7 @@ El script de inicio arranca node
 | /api_v1/singUp | POST | / | Registra u1 usuario nuevo con nombre, email(válido) y clave |  
 | /api_v1/tags | GET | / | Muestra el listado de tags |  
 | /api_v1/usuarios | GET | /:nombre | Pasando el usuario, muestra su información pública o privada |  
+
 
 ## Changelog  
 
