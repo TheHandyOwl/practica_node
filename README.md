@@ -183,3 +183,11 @@ El script de inicio arranca node
     - Añadimos autenticación a la cadena de conexión a MongoDB desde conectionMongoose  
     - Se mantiene el valor de la BBDD por defecto, pero se anonimiza el usuario y la password  
     - Se deberá modificar el usuario que escribe en la BBDD y su password  
+
+- Versión v.5.0.0  
+    - Sacamos e ignoramos la configuración en el fichero config/config.js  
+    - Pasamos al archivo config todos los archivos de configuración  
+    - Cambiamos la forma de conectarse a la BBDD. Ahora permite conexión sin autenticación o autenticación con usuario y contraseña
+    - Por defecto se deja la BBDD sin autenticar
+    - Dejamos ejemplo de configuración de variables en config/config.js.example  
+    - Cambiamos la clave de los tokens  
